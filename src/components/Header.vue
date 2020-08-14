@@ -26,15 +26,15 @@
       <div class="navbar">
         <div class="navbar-left-container">
           <a href="/">
-            <img class="navbar-brand-logo" src="../assets/imgs/logo.png"></a>
+            <img class="navbar-brand-logo" src="../assets/imgs/DDlogo.gif"></a>
         </div>
         <div class="navbar-right-container" style="display: flex;">
-          <a href="https://www.imooc.com/u/1343480" target="_blank" class="navbar-link">河畔一角</a>
+          <a href="https://github.com/w1043545633" target="_blank" class="navbar-link">Yawen Xue</a>
           <a class="navbar-link navbar-cart-link" href="/">
             <!-- 定义svg图标，引用上面的symbol -->
-            <svg class="navbar-cart-logo">
+            <!-- <svg class="navbar-cart-logo">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
-            </svg>
+            </svg> -->
           </a>
         </div>
       </div>

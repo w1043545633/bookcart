@@ -3,48 +3,48 @@
   "data":[
     {
       "productId": "100001",
-      "productName": "小度人工智能音箱",
-      "productPrice": 99,
+      "productName": "月亮与六便士",
+      "productPrice": 30,
       "productNum": 2,
       "productImage": "1.jpg",
       "checked":false
     },
     {
       "productId": "100002",
-      "productName": "小度小金刚",
-      "productPrice": 159,
+      "productName": "小王子",
+      "productPrice": 24,
       "productNum": 5,
       "productImage": "2.jpg",
       "checked": true
     },
     {
       "productId": "100003",
-      "productName": "小度在家1c",
-      "productPrice": 499,
+      "productName": "拉普拉斯的魔女",
+      "productPrice": 50,
       "productNum": 1,
       "productImage": "3.jpg",
       "checked": true
     },
     {
       "productId": "100004",
-      "productName": "小度大金刚",
-      "productPrice": 199,
+      "productName": "朝花夕拾",
+      "productPrice": 20,
       "productNum": 3,
       "productImage": "4.jpg",
       "checked": true
     },
     {
       "productId": "100005",
-      "productName": "小度青春版",
+      "productName": "我是猫",
       "productPrice": 69,
       "productNum": 2,
-      "productImage": "5.png",
+      "productImage": "5.jpg",
       "checked": false
     },
     {
       "productId": "100006",
-      "productName": "小度人工智能Pro",
-      "productPrice": 299,
+      "productName": "红与黑",
+      "productPrice": 35,
       "productNum": 1,
       "productImage": "6.jpg",
       "checked": true

@@ -6,7 +6,8 @@ import Address from '../Pages/address.vue'
 Vue.use(Router)
 
 export default new Router({
-   routes: [
+    mode: "hash",
+    routes: [
        {
            path: '/',
            name: 'cart',
@@ -17,5 +18,5 @@ export default new Router({
            name: 'address',
            component: Address
        }
-   ]
+    ]
 })

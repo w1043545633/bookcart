@@ -66,24 +66,24 @@
               <div class="addr-list-wrap">
                 <div class="addr-list">
                   <ul>
-                    <li  class="check">
+                    <li  :class="{'check': checkedIndex == index}" v-for="(item, index) in limitAddressList" v-bind:key="item.addressId" @click="checkedIndex = index">
                       <dl>
-                        <dt>河畔一角</dt>
-                        <dd class="address">北京市昌平区</dd>
-                        <dd class="tel">17600000000</dd>
+                        <dt>{{ item.userName }}</dt>
+                        <dd class="address">{{ item.streetName}}</dd>
+                        <dd class="tel">{{ item.tel }}</dd>
                       </dl>
                       <div class="addr-opration addr-del">
                         <!-- 删除地址 -->
-                        <a href="javascript:;" class="addr-del-btn">
+                        <a href="javascript:;" class="addr-del-btn" @click="delAddress(item.addressId)">
                           <svg class="icon icon-del">
                             <use xlink:href="#icon-del"></use>
                           </svg>
                         </a>
                       </div>
                       <div class="addr-opration addr-set-default">
-                        <a href="javascript:;" class="addr-set-default-btn"><i>设为默认</i></a>
+                        <a href="javascript:;" class="addr-set-default-btn" v-if="! item.isDefault" @click="setDefault(item.addressId)"><i>设为默认</i></a>
                       </div>
-                      <div class="addr-opration addr-default">默认地址</div>
+                      <div class="addr-opration addr-default" v-if="item.isDefault">默认地址</div>
                     </li>
         
                     <li class="addr-new">
@@ -100,7 +100,7 @@
                 </div>
         
                 <div class="shipping-addr-more">
-                  <a class="addr-more-btn up-down-btn open" href="javascript:;">
+                  <a class="addr-more-btn up-down-btn"  :class="{'open': limit > 3}" href="javascript:;" @click="expand">
                     查看更多
                     <i class="i-up-down">
                       <i class="i-up-down-l"></i>
@@ -128,12 +128,19 @@
                 </div>
               </div>
               <div class="next-btn-wrap">
-                <a class="btn btn--m btn--red" href="#">下一步</a>
+                <a class="btn btn--m btn--red" href="javascript:;" @click="mdShow = true">下一步</a>
               </div>
             </div>
           </div>
         </div>
-        <nav-model></nav-model>
+        <nav-model :mdShow="mdShow" @close="mdShow = false">
+        <template v-slot:message>
+          <p>想了解更多，请关注慕课网！</p>
+        </template>
+        <template v-slot:btnGroup>
+              <a class="btn btn--m btn--red" href="javascript:;" @click="mdShow = false">关闭</a>
+        </template>
+      </nav-model>
         <nav-footer></nav-footer>       
     </div>
 </template>
@@ -145,10 +152,62 @@ import navModel from '../components/Model.vue'
 
 export default {
   name: 'addr',
+  data(){
+    return {
+      addressList: [],
+      limit: 3,
+      checkedIndex: 0,
+      mdShow: false
+    }
+  },
   components: {
     navHeader,
     navFooter,
     navModel
+  },
+  mounted: function(){
+    this.init()
+  },
+  computed: {
+    limitAddressList: function(){
+      return this.addressList.slice(0, this.limit)
+    }
+  },
+  methods: {
+    init: function(){
+      this.axios.get('mock/address.json').then( (response)=> {
+        let res = response.data
+        this.addressList = res.data
+        this.addressList.forEach( (item, index)=> {
+          if(item.isDefault){
+            this.checkedIndex = index
+          }
+        })
+      })
+    },
+    expand: function(){
+      if(this.limit == 3){
+        this.limit = 5
+      } else {
+        this.limit = 3
+      }
+    },
+    setDefault: function(addressId){
+      this.addressList.forEach( (item)=> {
+        if(item.addressId == addressId){
+          item.isDefault = true
+        } else {
+          item.isDefault = false
+        }
+      })
+    },
+    delAddress(addressId){
+      this.addressList.forEach( (item, index)=> {
+        if(item.addressId == addressId){
+          this.addressList.splice(index, 1)
+        }
+      })
+    }
   }
 }
 </script>

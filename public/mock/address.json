@@ -3,15 +3,15 @@
   "data":[
     {
       "addressId": "100001",
-      "userName": "河畔一角",
+      "userName": "用户1",
       "streetName": "北京市朝阳区",
       "postCode": "100001",
-      "tel": 17088888888,
+      "tel": 17084444888,
       "isDefault": false
     },
     {
       "addressId": "100002",
-      "userName": "Jack Ma",
+      "userName": "用户2",
       "streetName": "杭州市西湖区",
       "postCode": "100002",
       "tel": 18099999999,
@@ -19,7 +19,7 @@
     },
     {
       "addressId": "100003",
-      "userName": "雷军",
+      "userName": "用户3",
       "streetName": "北京市昌平区",
       "postCode": "100003",
       "tel": 16022222222,
@@ -27,7 +27,7 @@
     },
     {
       "addressId": "100004",
-      "userName": "Robin Li",
+      "userName": "用户4",
       "streetName": "北京市海淀区",
       "postCode": "100004",
       "tel": 15033333333,
@@ -35,7 +35,7 @@
     },
     {
       "addressId": "100005",
-      "userName": "Pony Ma",
+      "userName": "用户5",
       "streetName": "深圳市南山区",
       "postCode": "100005",
       "tel": 13055555555,
@@ -43,7 +43,7 @@
     },
     {
       "addressId": "100006",
-      "userName": "刘强东",
+      "userName": "用户6",
       "streetName": "北京市亦庄经济开发区",
       "postCode": "100006",
       "tel": 12055555555,
